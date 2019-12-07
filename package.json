@@ -1,14 +1,27 @@
 {
   "name": "wbdv-fa19-server-node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Minghao Yu",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "node": "^13.3.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cab11918/wbdv-fa19-server-node.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/cab11918/wbdv-fa19-server-node/issues"
+  },
+  "homepage": "https://github.com/cab11918/wbdv-fa19-server-node#readme",
+  "description": ""
 }
