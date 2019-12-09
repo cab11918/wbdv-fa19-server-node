@@ -1,8 +1,5 @@
 let students = require('../data/students')
-// let questions = require('../questions')
 let dao = require('../data/daos/university.dao.server')
-// let answers = require("../data/answers")
-// let widgets = require("../data/widget.mock")
 
 module.exports = function (app) {
 
@@ -43,8 +40,6 @@ module.exports = function (app) {
     res.send(students)
   }
 
-  /////////////////////
-
   function findAllQuestions(req, res) {
     res.json(dao.findAllQuestions())
   }
@@ -81,8 +76,6 @@ module.exports = function (app) {
     res.send(questions)
   }
 
-  /////////////////////////
-
   function findAllAnswers(req, res) {
     res.json(dao.findAllAnswers())
   }
@@ -110,13 +103,11 @@ module.exports = function (app) {
   app.get("/api/student/:id", findStudentById);
   app.put("/api/student/:id", updateStudentById);
   app.delete("/api/student/:id", deleteStudent);
-////////////////////////////
   app.post("/api/question", createQuestion)
   app.get("/api/question", findAllQuestions);
   app.get("/api/question/:id", findQuestionById);
   app.put("/api/question/:id", updateQuestionById);
   app.delete("/api/question/:id", deleteQuestion);
-////////////////////////////
   app.post("/api/student/:sid/question/:qid/answer",)
   app.get("/api/answer", findAllAnswers),
       app.get("/api/answer/:id", findAnswerById);

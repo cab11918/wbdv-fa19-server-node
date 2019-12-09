@@ -23,10 +23,6 @@ app.get('/', function (req, res) {
 
 
 
-
-
-
-
 widgetService = require('./services/university.service.server')(app)
 
 app.listen(3000)
