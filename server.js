@@ -1,5 +1,10 @@
 var express = require('express')
 var app = express()
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+
+
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin",
@@ -13,10 +18,16 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', function (req, res) {
-  res.send('hello world')
+  res.send('hello student')
 })
 
-widgetService = require('./data/daos/university.dao.server')(app)
+
+
+
+
+
+
+widgetService = require('./services/university.service.server')(app)
 
 app.listen(3000)
 
