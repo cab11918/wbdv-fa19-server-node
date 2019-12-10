@@ -98,6 +98,11 @@ module.exports = function (app) {
         dao.findAnswersByStudentAndQuestion(req.params.sid, req.params.qid))
   }
 
+  function answerQuestion(req, res) {
+    res.send(
+        dao.answerQuestion(req.params.sid, req.params.qid, req.body))
+  }
+
   app.post("/api/student", createStudent);
   app.get("/api/student", findAllStudents);
   app.get("/api/student/:id", findStudentById);
@@ -117,6 +122,8 @@ module.exports = function (app) {
       findAnswersByStudentAndQuestion);
   app.get("/api/student/:sid/question/:qid/answer",
       findAnswersByStudentAndQuestion);
+  app.post("/api/student/:sid/question/:qid/answer",
+      answerQuestion);
 
 }
 

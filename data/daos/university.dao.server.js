@@ -15,7 +15,7 @@ createStudent = (student) => {
 findStudentById = (id) => {
   let temp = null
   students.forEach(
-      student => student._id === id ? temp = student : null)
+      student => student._id == id ? temp = student : null)
   return temp
 }
 
@@ -33,23 +33,25 @@ createQuestion = (question) => {
 }
 
 answerQuestion = (studentId, questionId, answer) => {
-  answers.push({
-    answer
-  })
+  answer.student == studentId && answer.question == questionId
+      ? students.forEach(student => questions.forEach(
+      question => student._id == studentId && question._id == questionId
+          ? answers.push(answer) : null)) : null
+
   return answers
 }
 
 findQuestionById = (id) => {
   let temp = null
   questions.forEach(
-      question => question._id === id ? temp = question : null)
+      question => question._id == id ? temp = question : null)
   return temp
 }
 
 findAnswerById = (id) => {
   let temp = null
   answers.forEach(
-      answer => answer._id === id ? temp = answer : null)
+      answer => answer._id == id ? temp = answer : null)
   return temp
 }
 
